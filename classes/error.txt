@@ -1,0 +1,21 @@
+Account 1234567890 was created for Linda with 1000 initial balance.
+500
+600
+1800
+500
+Date            Amount  Balance Note
+27/07/2020      1000    1000    Initial balance
+27/07/2020      -500    500     Rent payment
+27/07/2020      100     600     Friend paid me back
+27/07/2020      1200    1800    Salary
+27/07/2020      -1300   500     New computer
+
+Exception caught creating account with negative balance
+System.ArgumentOutOfRangeException: Amount of deposit must be positive (Parameter 'amount')
+   at classes.BankAccount.MakeDeposit(Decimal amount, DateTime date, String note) in /Users/Linda.Johnstone/Documents/fma/c-sharp/classes/BankAccount.cs:line 41
+   at classes.BankAccount..ctor(String name, Decimal initialBalance) in /Users/Linda.Johnstone/Documents/fma/c-sharp/classes/BankAccount.cs:line 33
+   at classes.Program.Main(String[] args) in /Users/Linda.Johnstone/Documents/fma/c-sharp/classes/Program.cs:line 27
+Exception caught trying to overdraw
+System.InvalidOperationException: Not sufficient funds for this withdrawal
+   at classes.BankAccount.MakeWithdrawal(Decimal amount, DateTime date, String note) in /Users/Linda.Johnstone/Documents/fma/c-sharp/classes/BankAccount.cs:line 55
+   at classes.Program.Main(String[] args) in /Users/Linda.Johnstone/Documents/fma/c-sharp/classes/Program.cs:line 37
