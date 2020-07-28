@@ -1,0 +1,12 @@
+Command + A 				== Selects all items in window
+Command + F 				== Shows 'Find' window
+Command + X 				== Cut
+Command + V 				== Paste
+Command + Z 				== Undo
+Command + S 				== Save
+Command + Space bar 			== Search
+Command + Tab 				== Swap windows
+Command + Q 				== Quit
+Command + C 				== Copy
+Return + R-arrow (after highlighting) 	== Rename file (need to delete existing name)
+Shift + Command + 4 			== Screenshot

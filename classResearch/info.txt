@@ -1,0 +1,18 @@
+Link to code:
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/class
+
+File contains 2 classes - Child + StringTest
+'Child' class contains:
+** Constructor - default + public
+** private variables - only able to be called by constructor 
+** Method to print to console
+
+'StringTest' class contains:
+** Main() - new objects ('Child') created and displayed
+** Private members (name and age) of 'Child' unable to be called as Main is not a member of this class
+
+** Added a new Child using Console.ReadLine() - and it worked!
+
+** How to convert string to doc correctly - only successful code is:
+	int.Parse(Console.ReadLine());

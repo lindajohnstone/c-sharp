@@ -1,0 +1,10 @@
+Show content of file == cat
+Create new console == dotnet new
+Run console == dotnet run
+Clone repository from GitHub == git clone <code from repo> ** must use ssh code not https
+Steps to push files:
+** Add files == git add <filename> ** can add all files, don't remember how
+** Check status == git status
+** Commit (stage) files == git commit -m '<commit message>'
+** Push files == git push
+Check which branch (local) == git branch
