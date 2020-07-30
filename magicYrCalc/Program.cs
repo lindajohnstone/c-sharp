@@ -17,9 +17,9 @@ namespace magicYrCalc
         }
         static void mthlySalary(int num)
         {
-            var mthSalary = num / 12;
-            Console.Write("Monthly Salary: ");
-            Console.WriteLine(mthSalary);
+            var mthSalary = num / 12m; // passing number is int, is changed to decimal
+            Console.Write("Monthly Salary: $");
+            Console.WriteLine("{0:F0}",mthSalary); // diff: Math.round == create number w/o decimal; {0:F0} == display original value w/o decimal
         } 
         static void inputDetails()
         {
