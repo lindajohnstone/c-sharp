@@ -1,0 +1,194 @@
+Starting OmniSharp server at 7/30/2020, 5:07:44 PM
+    Target: /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes
+
+OmniSharp server started.
+    Path: /Users/Linda.Johnstone/.vscode/extensions/ms-dotnettools.csharp-1.22.1/.omnisharp/1.35.3/run
+    PID: 59325
+
+[info]: OmniSharp.Stdio.Host
+        Starting OmniSharp on MacOS 10.15.6 (x64)
+[info]: OmniSharp.Services.DotNetCliService
+        DotNetPath set to dotnet
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        Located 1 MSBuild instance(s)
+            1: StandAlone 16.4 - "/Users/Linda.Johnstone/.vscode/extensions/ms-dotnettools.csharp-1.22.1/.omnisharp/1.35.3/omnisharp/.msbuild/Current/Bin"
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        MSBUILD_EXE_PATH environment variable set to '/Users/Linda.Johnstone/.vscode/extensions/ms-dotnettools.csharp-1.22.1/.omnisharp/1.35.3/omnisharp/.msbuild/Current/Bin/MSBuild.dll'
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        Registered MSBuild instance: StandAlone 16.4 - "/Users/Linda.Johnstone/.vscode/extensions/ms-dotnettools.csharp-1.22.1/.omnisharp/1.35.3/omnisharp/.msbuild/Current/Bin"
+            CscToolExe = csc.exe
+            MSBuildToolsPath = /Users/Linda.Johnstone/.vscode/extensions/ms-dotnettools.csharp-1.22.1/.omnisharp/1.35.3/omnisharp/.msbuild/Current/Bin
+            CscToolPath = /Users/Linda.Johnstone/.vscode/extensions/ms-dotnettools.csharp-1.22.1/.omnisharp/1.35.3/omnisharp/.msbuild/Current/Bin/Roslyn
+            BypassFrameworkInstallChecks = true
+            MSBuildExtensionsPath = /Users/Linda.Johnstone/.vscode/extensions/ms-dotnettools.csharp-1.22.1/.omnisharp/1.35.3/omnisharp/.msbuild
+[info]: OmniSharp.Cake.CakeProjectSystem
+        Detecting Cake files in '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes'.
+[info]: OmniSharp.Cake.CakeProjectSystem
+        Could not find any Cake files
+[info]: OmniSharp.MSBuild.ProjectSystem
+        No solution files found in '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.Script.ScriptProjectSystem
+        Detecting CSX files in '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes'.
+[info]: OmniSharp.Script.ScriptProjectSystem
+        Could not find any CSX files
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.CSharpFormattingWorkspaceOptionsProvider, Order: 0
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.RenameWorkspaceOptionsProvider, Order: 100
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.ImplementTypeWorkspaceOptionsProvider, Order: 110
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.BlockStructureWorkspaceOptionsProvider, Order: 140
+[info]: OmniSharp.WorkspaceInitializer
+        Configuration finished.
+[info]: OmniSharp.Stdio.Host
+        Omnisharp server running using Stdio at location '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes' on host 59298.
+[info]: OmniSharp.MSBuild.ProjectManager
+        Successfully loaded project file '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'.
+[info]: OmniSharp.MSBuild.ProjectManager
+        Adding project '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Update project: ForTestPurposes
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj
+[warn]: OmniSharp.MSBuild.ProjectManager
+        Failed to load project file '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'.
+/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj(1,1)
+Microsoft.Build.Exceptions.InvalidProjectFileException: The project file could not be loaded. Could not find file "/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj"  /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj ---> System.IO.FileNotFoundException: Could not find file "/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj"
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <f759957039b44a0190b1110fdfe3030f>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share) [0x00000] in <f759957039b44a0190b1110fdfe3030f>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at Microsoft.Build.Internal.XmlReaderExtension..ctor (System.String file, System.Boolean loadAsReadOnly) [0x0006c] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Internal.XmlReaderExtension.Create (System.String filePath, System.Boolean loadAsReadOnly) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.LoadDocument (System.String fullPath, System.Boolean preserveFormatting, System.Boolean loadAsReadOnly) [0x00039] in <b9c6981efb914921bf444e0329e5434e>:0 
+   --- End of inner exception stack trace ---
+  at Microsoft.Build.Shared.ProjectFileErrorUtilities.VerifyThrowInvalidProjectFile (System.Boolean condition, System.String errorSubCategoryResourceName, Microsoft.Build.Shared.BuildEventFileInfo projectFile, System.Exception innerException, System.String resourceName, System.Object[] args) [0x00053] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Shared.ProjectFileErrorUtilities.ThrowInvalidProjectFile (Microsoft.Build.Shared.BuildEventFileInfo projectFile, System.Exception innerException, System.String resourceName, System.Object[] args) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.LoadDocument (System.String fullPath, System.Boolean preserveFormatting, System.Boolean loadAsReadOnly) [0x000ea] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement..ctor (System.String path, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean preserveFormatting) [0x00065] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.CreateProjectFromPath (System.String projectFile, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean preserveFormatting) [0x00034] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement+<>c.<OpenProjectOrSolution>b__207_0 (System.String path, Microsoft.Build.Evaluation.ProjectRootElementCacheBase cache) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectRootElementCache.Get (System.String projectFile, Microsoft.Build.Evaluation.ProjectRootElementCacheBase+OpenProjectRootElement openProjectRootElement, System.Boolean isExplicitlyLoaded, System.Nullable`1[T] preserveFormatting) [0x0013c] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.OpenProjectOrSolution (System.String fullPath, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean isExplicitlyLoaded) [0x00006] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project+ProjectImpl..ctor (Microsoft.Build.Evaluation.Project owner, System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings, Microsoft.Build.Evaluation.Context.EvaluationContext evaluationContext) [0x0006d] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings, Microsoft.Build.Evaluation.Context.EvaluationContext evaluationContext) [0x00030] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectCollection.LoadProject (System.String fileName, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion) [0x000f7] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectCollection.LoadProject (System.String fileName, System.String toolsVersion) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at OmniSharp.MSBuild.ProjectLoader.EvaluateProjectFileCore (System.String filePath) [0x0003f] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectLoader.BuildProject (System.String filePath) [0x0000d] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectFile.ProjectFileInfo.Reload (OmniSharp.MSBuild.ProjectLoader loader) [0x00007] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectManager+<>c__DisplayClass32_0.<ReloadProject>b__0 () [0x00000] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at (wrapper delegate-invoke) System.Func`1[System.ValueTuple`3[OmniSharp.MSBuild.ProjectFile.ProjectFileInfo,System.Collections.Immutable.ImmutableArray`1[OmniSharp.MSBuild.Logging.MSBuildDiagnostic],OmniSharp.MSBuild.Notification.ProjectLoadedEventArgs]].invoke_TResult()
+  at OmniSharp.MSBuild.ProjectManager.LoadOrReloadProject (System.String projectFilePath, System.Func`1[TResult] loader) [0x0001b] in <93f5c0b342d34525bcf259470963dd70>:0 
+
+[info]: OmniSharp.MSBuild.ProjectManager
+        Update project: ForTestPurposes
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj
+[info]: OmniSharp.MSBuild.ProjectManager
+        Successfully loaded project file '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'.
+[info]: OmniSharp.MSBuild.ProjectManager
+        Update project: ForTestPurposes
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj
+[warn]: OmniSharp.MSBuild.ProjectManager
+        Failed to load project file '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'.
+/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj(1,1)
+Microsoft.Build.Exceptions.InvalidProjectFileException: The project file could not be loaded. Could not find file "/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj"  /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj ---> System.IO.FileNotFoundException: Could not find file "/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj"
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <f759957039b44a0190b1110fdfe3030f>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share) [0x00000] in <f759957039b44a0190b1110fdfe3030f>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at Microsoft.Build.Internal.XmlReaderExtension..ctor (System.String file, System.Boolean loadAsReadOnly) [0x0006c] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Internal.XmlReaderExtension.Create (System.String filePath, System.Boolean loadAsReadOnly) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.LoadDocument (System.String fullPath, System.Boolean preserveFormatting, System.Boolean loadAsReadOnly) [0x00039] in <b9c6981efb914921bf444e0329e5434e>:0 
+   --- End of inner exception stack trace ---
+  at Microsoft.Build.Shared.ProjectFileErrorUtilities.VerifyThrowInvalidProjectFile (System.Boolean condition, System.String errorSubCategoryResourceName, Microsoft.Build.Shared.BuildEventFileInfo projectFile, System.Exception innerException, System.String resourceName, System.Object[] args) [0x00053] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Shared.ProjectFileErrorUtilities.ThrowInvalidProjectFile (Microsoft.Build.Shared.BuildEventFileInfo projectFile, System.Exception innerException, System.String resourceName, System.Object[] args) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.LoadDocument (System.String fullPath, System.Boolean preserveFormatting, System.Boolean loadAsReadOnly) [0x000ea] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement..ctor (System.String path, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean preserveFormatting) [0x00065] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.CreateProjectFromPath (System.String projectFile, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean preserveFormatting) [0x00034] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement+<>c.<OpenProjectOrSolution>b__207_0 (System.String path, Microsoft.Build.Evaluation.ProjectRootElementCacheBase cache) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectRootElementCache.Get (System.String projectFile, Microsoft.Build.Evaluation.ProjectRootElementCacheBase+OpenProjectRootElement openProjectRootElement, System.Boolean isExplicitlyLoaded, System.Nullable`1[T] preserveFormatting) [0x0013c] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.OpenProjectOrSolution (System.String fullPath, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean isExplicitlyLoaded) [0x00006] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project+ProjectImpl..ctor (Microsoft.Build.Evaluation.Project owner, System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings, Microsoft.Build.Evaluation.Context.EvaluationContext evaluationContext) [0x0006d] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings, Microsoft.Build.Evaluation.Context.EvaluationContext evaluationContext) [0x00030] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectCollection.LoadProject (System.String fileName, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion) [0x000f7] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectCollection.LoadProject (System.String fileName, System.String toolsVersion) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at OmniSharp.MSBuild.ProjectLoader.EvaluateProjectFileCore (System.String filePath) [0x0003f] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectLoader.BuildProject (System.String filePath) [0x0000d] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectFile.ProjectFileInfo.Reload (OmniSharp.MSBuild.ProjectLoader loader) [0x00007] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectManager+<>c__DisplayClass32_0.<ReloadProject>b__0 () [0x00000] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at (wrapper delegate-invoke) System.Func`1[System.ValueTuple`3[OmniSharp.MSBuild.ProjectFile.ProjectFileInfo,System.Collections.Immutable.ImmutableArray`1[OmniSharp.MSBuild.Logging.MSBuildDiagnostic],OmniSharp.MSBuild.Notification.ProjectLoadedEventArgs]].invoke_TResult()
+  at OmniSharp.MSBuild.ProjectManager.LoadOrReloadProject (System.String projectFilePath, System.Func`1[TResult] loader) [0x0001b] in <93f5c0b342d34525bcf259470963dd70>:0 
+
+[info]: OmniSharp.MSBuild.ProjectManager
+        Update project: ForTestPurposes
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj
+[info]: OmniSharp.MSBuild.ProjectManager
+        Successfully loaded project file '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'.
+[info]: OmniSharp.MSBuild.ProjectManager
+        Update project: ForTestPurposes
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj
+[warn]: OmniSharp.MSBuild.ProjectManager
+        Failed to load project file '/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj'.
+/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj(1,1)
+Microsoft.Build.Exceptions.InvalidProjectFileException: The project file could not be loaded. Could not find file "/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj"  /Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj ---> System.IO.FileNotFoundException: Could not find file "/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes/ForTestPurposes.csproj"
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <f759957039b44a0190b1110fdfe3030f>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share) [0x00000] in <f759957039b44a0190b1110fdfe3030f>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at Microsoft.Build.Internal.XmlReaderExtension..ctor (System.String file, System.Boolean loadAsReadOnly) [0x0006c] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Internal.XmlReaderExtension.Create (System.String filePath, System.Boolean loadAsReadOnly) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.LoadDocument (System.String fullPath, System.Boolean preserveFormatting, System.Boolean loadAsReadOnly) [0x00039] in <b9c6981efb914921bf444e0329e5434e>:0 
+   --- End of inner exception stack trace ---
+  at Microsoft.Build.Shared.ProjectFileErrorUtilities.VerifyThrowInvalidProjectFile (System.Boolean condition, System.String errorSubCategoryResourceName, Microsoft.Build.Shared.BuildEventFileInfo projectFile, System.Exception innerException, System.String resourceName, System.Object[] args) [0x00053] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Shared.ProjectFileErrorUtilities.ThrowInvalidProjectFile (Microsoft.Build.Shared.BuildEventFileInfo projectFile, System.Exception innerException, System.String resourceName, System.Object[] args) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.LoadDocument (System.String fullPath, System.Boolean preserveFormatting, System.Boolean loadAsReadOnly) [0x000ea] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement..ctor (System.String path, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean preserveFormatting) [0x00065] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.CreateProjectFromPath (System.String projectFile, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean preserveFormatting) [0x00034] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement+<>c.<OpenProjectOrSolution>b__207_0 (System.String path, Microsoft.Build.Evaluation.ProjectRootElementCacheBase cache) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectRootElementCache.Get (System.String projectFile, Microsoft.Build.Evaluation.ProjectRootElementCacheBase+OpenProjectRootElement openProjectRootElement, System.Boolean isExplicitlyLoaded, System.Nullable`1[T] preserveFormatting) [0x0013c] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Construction.ProjectRootElement.OpenProjectOrSolution (System.String fullPath, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectRootElementCacheBase projectRootElementCache, System.Boolean isExplicitlyLoaded) [0x00006] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project+ProjectImpl..ctor (Microsoft.Build.Evaluation.Project owner, System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings, Microsoft.Build.Evaluation.Context.EvaluationContext evaluationContext) [0x0006d] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings, Microsoft.Build.Evaluation.Context.EvaluationContext evaluationContext) [0x00030] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, System.String subToolsetVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection, Microsoft.Build.Evaluation.ProjectLoadSettings loadSettings) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.Project..ctor (System.String projectFile, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion, Microsoft.Build.Evaluation.ProjectCollection projectCollection) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectCollection.LoadProject (System.String fileName, System.Collections.Generic.IDictionary`2[TKey,TValue] globalProperties, System.String toolsVersion) [0x000f7] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at Microsoft.Build.Evaluation.ProjectCollection.LoadProject (System.String fileName, System.String toolsVersion) [0x00000] in <b9c6981efb914921bf444e0329e5434e>:0 
+  at OmniSharp.MSBuild.ProjectLoader.EvaluateProjectFileCore (System.String filePath) [0x0003f] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectLoader.BuildProject (System.String filePath) [0x0000d] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectFile.ProjectFileInfo.Reload (OmniSharp.MSBuild.ProjectLoader loader) [0x00007] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at OmniSharp.MSBuild.ProjectManager+<>c__DisplayClass32_0.<ReloadProject>b__0 () [0x00000] in <93f5c0b342d34525bcf259470963dd70>:0 
+  at (wrapper delegate-invoke) System.Func`1[System.ValueTuple`3[OmniSharp.MSBuild.ProjectFile.ProjectFileInfo,System.Collections.Immutable.ImmutableArray`1[OmniSharp.MSBuild.Logging.MSBuildDiagnostic],OmniSharp.MSBuild.Notification.ProjectLoadedEventArgs]].invoke_TResult()
+  at OmniSharp.MSBuild.ProjectManager.LoadOrReloadProject (System.String projectFilePath, System.Func`1[TResult] loader) [0x0001b] in <93f5c0b342d34525bcf259470963dd70>:0 
+
+[info]: OmniSharp.MSBuild.ProjectManager
+        Update project: ForTestPurposes
