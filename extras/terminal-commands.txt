@@ -1,6 +1,8 @@
 List contents 				== ls
 Make directory 				== mkdir <directory name>
-Change directory 			== cd (use .. to go up, <directory name> to go down
+Change directory 			== cd (use .. to go up, <directory name> to go down)
 Show all files (including hidden) 	== ls -a
 Copy file to new location 		== cp <filename> <location>
+Create new file				== touch <filename>
+
 
