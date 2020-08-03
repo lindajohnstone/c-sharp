@@ -3,6 +3,36 @@ using System.Globalization;
 
 namespace ForTestPurposes
 {
+    class SwitchNum
+    {
+        private int num;
+        
+        // Constructor:
+        public SwitchNum(int num)
+            {
+                this.num = num;
+            }
+
+            // Printing method:
+            public void switchNum(int num)
+            {
+                switch(num)
+                    {
+                        case 1:
+                            //MagicYearCalculator();
+                            break;
+                        case 2:
+                            //FizzBuzz();
+                            break;
+                        case 3:
+                            //PrintChild();
+                            break;
+                        default:
+                            Console.WriteLine("Please enter a number between 1 - 3.");
+                            break;
+                    }   
+            }
+    }
     class Program
     {
         static void UserChoice() 
@@ -12,12 +42,12 @@ namespace ForTestPurposes
                 
                 var switchNum = Console.ReadLine();
                 //var newNum = 0;
-                while (int.TryParse(switchNum, out var newNum))
-                /* if (!int.TryParse(switchNum, out newNum)) //if not a whole number input give an error ** code works, changing code to use while
+                //while (int.TryParse(switchNum, out var newNum))
+                if (!int.TryParse(switchNum, out var newNum)) //if not a whole number input give an error ** code works, changing code to use while
                 {
-                    Console.WriteLine("Not an integer");
+                    Console.WriteLine("Please enter a number");
                 }
-                else */ 
+                else 
                 {
                     switch(newNum)
                     {
@@ -31,7 +61,7 @@ namespace ForTestPurposes
                             PrintChild();
                             break;
                         default:
-                            Console.WriteLine("Not a valid option");
+                            Console.WriteLine("Please enter a number between 1 - 3.");
                             break;
                         }
                     }
@@ -40,8 +70,18 @@ namespace ForTestPurposes
         {
             
             UserChoice();
-            Console.WriteLine("Are you sure you want to exit? Type 'yes' to exit or 'no' to try again.");
+            
             var choice = Console.ReadLine();
+            bool boolChoice;
+            if (choice == "yes")
+            {
+                boolChoice = true;
+            }
+            else
+            {
+                UserChoice();
+            } 
+            Console.WriteLine("Are you sure you want to exit? Please type 'yes' to exit and 'no' to continue.");
         }
             
 
@@ -123,7 +163,7 @@ namespace ForTestPurposes
             // Printing method:
             public void PrintPerson()
             {
-                Console.WriteLine("{0}, {1}", name, surname);
+                Console.WriteLine("{0} {1}", name, surname);
                 mthlySalary(salary);
                 Console.WriteLine("Magic Year: {0}",magicYear(year));
             }
