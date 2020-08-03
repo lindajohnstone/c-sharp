@@ -52,13 +52,13 @@ namespace ForTestPurposes
                     switch(newNum)
                     {
                         case 1:
-                            MagicYearCalculator();
+                            MagicYearCalculator(); // change to class
                             break;
                         case 2:
-                            FizzBuzz();
+                            FizzBuzz(); // change to class
                             break;
                         case 3:
-                            PrintChild();
+                            PrintChild(); // change to class
                             break;
                         default:
                             Console.WriteLine("Please enter a number between 1 - 3.");
@@ -69,10 +69,15 @@ namespace ForTestPurposes
         static void Main(string[] args)
         {
             
-            UserChoice();
+            UserChoice();// can be instantiated within class
             
+            UserChoiceMoreThanOnce();
+            }
+        static void UserChoiceMoreThanOnce()
+        {
+            Console.WriteLine("Are you sure you want to exit? Type 'yes' to exit or 'no' to try again.");
             var choice = Console.ReadLine();
-            bool boolChoice;
+            bool boolChoice;// use of while loop continually loops b/c choice is always == no
             if (choice == "yes")
             {
                 boolChoice = true;
@@ -83,7 +88,6 @@ namespace ForTestPurposes
             } 
             Console.WriteLine("Are you sure you want to exit? Please type 'yes' to exit and 'no' to continue.");
         }
-            
 
         static void PrintChild()
         {
@@ -154,7 +158,7 @@ namespace ForTestPurposes
             // Constructor:
             public Person(string name, string surname, int salary, int year)
             {
-                this.name = name;
+                this.name = name; // passed in / injected 
                 this.surname = surname;
                 this.salary = salary;
                 this.year = year;

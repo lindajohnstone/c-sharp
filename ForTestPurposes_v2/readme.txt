@@ -17,5 +17,12 @@ Attempting to add more than one class file
 ** error msg: 
 	Program.cs(47,18): warning CS0219: The variable 'boolChoice' is assigned but its value is never used [/Users/Linda.Johnstone/Documents/fma/c-sharp/ForTestPurposes_v2/ForTestPurposes_v2.csproj]
 ** ?? change to using classes? - UserChoice method receives number for switch?
+** file returned to before switch class - now doesn't work properly
+
+UPDATE
+** File back to exiting on 'yes', only runs 1 extra time (total of 2 times) on 'no.
+** Line 40 (Press any other key to exit) no longer works
+** Still have error re boolChoice
+
 
 
