@@ -3,8 +3,13 @@ Create new console == dotnet new
 Run console == dotnet run
 Clone repository from GitHub == git clone <code from repo> ** must use ssh code not https
 Steps to push files:
-** Add files == git add <filename> ** can add all files, don't remember how
+** Add files == git add <filename> ** can add all files, use git add .
 ** Check status == git status
 ** Commit (stage) files == git commit -m '<commit message>'
 ** Push files == git push
 Check which branch (local) == git branch
+Rename the local branch to the new name == git branch -m <old_name> <new_name>
+Delete the old branch on remote - where <remote> is, for example, origin == git push <remote> --delete <old_name>
+Or shorter way to delete remote branch [:] == git push <remote> :<old_name>
+Push the new branch to remote == git push <remote> <new_name>
+Reset the upstream branch for the new_name local branch == git push <remote> -u <new_name>

@@ -1,0 +1,10 @@
+What Have I Done Today?
+** Managed to get the code to run a second time with 'no' option.
+** Exits as expected on 'yes'
+** Tried unsuccessfully to run switch as separate class
+** Bianca confirmed that clash with Agile workshop will be rescheduled
+** Research on 'Access Modifiers'	
+	** public - can be accessed from within own class and another (by creating instance - I.e. using 'new' keyword
+	** private - can only be accessed within class - getters and setters need to be used for access in another class.
+	** protected - only used in same assemblies - what does this mean??
+
