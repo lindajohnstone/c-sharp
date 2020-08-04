@@ -3,9 +3,9 @@
 namespace classResearch
 {
     class Child
-{
-    private int age;
-    private string name;
+    {
+        private int age;
+        private string name;
 
     // Default constructor:
     public Child()

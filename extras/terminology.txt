@@ -1,0 +1,97 @@
+Information from w3schools.com and https://docs.microsoft.com/en-us/dotnet/csharp/ (C# concepts on Left menu)
+
+C# strongly typed language
+
+Namespace
+** can help control scope of class and method names in larger projects - a way to present program elements that are exposed to other programs
+** keyword (lowercase) to declare a namespace
+** used by .NET to organise its many classes
+** must be a valid C# identifier name
+** used within (internal organisation) a program
+
+C# Identifiers
+** https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-numeric-format-strings?redirectedfrom=MSDN
+** https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/identifier-names
+** must start with a letter or _
+** Naming conventions
+	** C# programs use PascalCase for type names, namespaces, and all public members. 	In addition, the following conventions are common:
+		Interface names start with a capital I.
+		Attribute types end with the word Attribute.
+		Enum types use a singular noun for non-flags, and a plural noun for flags.
+		Identifiers should not contain two consecutive _ characters. Those names are reserved for compiler generated identifiers.
+
+Class
+** reference type
+** declared by using 'class' keyword
+** access modifiers:	
+	** public - anyone can create instances
+** name of class must be a valid C# identifier name
+** defines a type of object but is not an object itself
+
+Object
+** can be created by using the new keyword followed by the name of the class it is based on
+	** Customer object1 = new Customer();
+** don't create object references that don't refer to an object. Give object a valid name; otherwise trying to access this object will fail at run time
+
+Method
+** public: can only be accessed by objects using dot syntax (Car.MyMethod();)
+** static: can be accessed w/o creating and object of the class
+** public keyword == access modifier
+** constructor method used to initialise objects; cannot have a return type; name must match class name
+
+Access Modifiers
+** used to control visibility of class members (security)
+** sensitive data is hidden from users (encapsulation)
+** public == code accessible all classes
+** private == code only accessible within same class
+** protected == code accessible within same class or in a class that is inherited from that class
+** internal == code only accessible within own assembly, but not from another assembly
+** protected internal
+** private protected
+** if no access modifier is specified, class members are private
+
+Method properties
+** combination of variable and method; has 2 methods: get and set
+** automatic properties: e.g. 
+	class Person
+	{
+  		public string Name  // property
+  			{ get; set; }
+	}
+
+	class Program
+	{
+ 	 	static void Main(string[] args)
+  		{
+    			Person myObj = new Person();
+    			myObj.Name = "Liam";
+    			Console.WriteLine(myObj.Name);
+  		}
+	}
+
+Encapsulation
+** better control of class members (reduce possibility of code being messed up)
+** fields can be read-only (get method only) or write-only (set method only)
+** flexible - one part of the code can be changed without affecting other parts
+** increased security of data
+
+Inheritance (Is this relevant)
+** Derived class (child) - inherits from
+** Base class (parent) - being inherited from
+** useful for code reusability
+** use of 'sealed' keyword will prevent inheritance
+
+Polymorphism (Is this relevant)
+
+Abstraction
+** process of hiding certain details; shows only essential information to user
+** abstract keyword used for classes and methods
+** abstract class - a restricted class that cannot be used to create objects; must be inherited from another class to be used
+** abstract method - cannily be used in an abstract class and does not have a body; body is provided by derived class (inherited)
+** abstract class can have both abstract and regular methods
+** https://www.w3schools.com/cs/cs_abstract.asp
+** used to achieve security 
+** also be achieved with Interfaces
+
+
+ 
