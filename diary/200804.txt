@@ -1,0 +1,9 @@
+What have I done today?
+** created MagicYearCalculator class and moved files from Program.cs
+** ensured Zoom could access microphone for meeting today
+    ** is this meeting appropriate for me? Some of the aspects I do not feel that I can answer as I have not had the experience using Agile
+    ** MYOB - incremental or iterative?
+    ** Rest of activities relevant!!
+** created FizzBuzz class - moved relevant code to it
+** added to Child class
+** tested all code changes work

@@ -13,3 +13,4 @@ Delete the old branch on remote - where <remote> is, for example, origin == git 
 Or shorter way to delete remote branch [:] == git push <remote> :<old_name>
 Push the new branch to remote == git push <remote> <new_name>
 Reset the upstream branch for the new_name local branch == git push <remote> -u <new_name>
+Pull branch (on GitHub)

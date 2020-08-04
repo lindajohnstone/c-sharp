@@ -37,7 +37,7 @@ namespace ForTestPurposes
     {
         static void UserChoice() 
             {
-                var messageText = "Please select from the following options: 1 - Magic Year Calculator, 2 - FizzBuzz, 3 - PrintChild. Press any other key to exit";
+                var messageText = "Please select from the following options: 1 - Magic Year Calculator, 2 - FizzBuzz, 3 - PrintChild. ";
                 Console.WriteLine(messageText);
                 
                 var switchNum = Console.ReadLine();
@@ -86,7 +86,7 @@ namespace ForTestPurposes
             {
                 UserChoice();
             } 
-            Console.WriteLine("Are you sure you want to exit? Please type 'yes' to exit and 'no' to continue.");
+            Console.WriteLine("Are you sure you want to exit? Please type 'yes' to exit and 'no' to continue.");// 'yes'exits, no repeats once
         }
 
         static void PrintChild()
@@ -111,7 +111,7 @@ namespace ForTestPurposes
             //child2.PrintChild();
             //Console.Write("Child #3: ");
             //child3.PrintChild();
-            Console.Write("Child #4: ");
+            //Console.Write("Child #4: ");
             child4.PrintChild();
         }
 /* Output:
@@ -139,88 +139,6 @@ namespace ForTestPurposes
         {
             FizzBuzz MinMax = new FizzBuzz(1, 100);
             MinMax.PrintFizzBuzz();
-        }
-    }
-    class Person    
-    {
-        // need new name, surname, salary & year
-            private string name;
-            private string surname;
-            private int salary;
-            private int year;
-
-            // Default constructor:
-            public Person()
-            {
-                name = "N/A";
-            }
-
-            // Constructor:
-            public Person(string name, string surname, int salary, int year)
-            {
-                this.name = name; // passed in / injected 
-                this.surname = surname;
-                this.salary = salary;
-                this.year = year;
-            }
-
-            // Printing method:
-            public void PrintPerson()
-            {
-                Console.WriteLine("{0} {1}", name, surname);
-                mthlySalary(salary);
-                Console.WriteLine("Magic Year: {0}",magicYear(year));
-            }
-        static int magicYear(int num)
-        {
-            var mgcYr = num + 65;
-            //Console.Write("Magic Year: ");
-            //Console.WriteLine(mgcYr);
-            return mgcYr;
-        }
-        static void mthlySalary(int num)
-        {
-            var mthSalary = num / 12m; // passing number is int, is changed to decimal
-            Console.Write("Monthly Salary: $");
-            Console.WriteLine("{0:F0}",mthSalary); // diff: Math.round == create number w/o decimal; {0:F0} == display original value w/o decimal
-        } 
-    }
-    class FizzBuzz
-    {
-        private int startNumber;
-        private int endNumber;
-
-        // Default constructor:
-        public FizzBuzz()
-        {
-            startNumber = 0;
-        }
-        
-        // Constructor:
-        public FizzBuzz(int startNumber, int endNumber)
-        {
-            this.startNumber = startNumber;
-            this.endNumber = endNumber;
-        }
-
-        public void PrintFizzBuzz()
-        {
-            for(var num = 1; num <= 100; num++)
-            {
-                if(num % 3 == 0)
-                {
-                    Console.Write("Fizz");
-                }
-                else if (num % 5 == 0)
-                {
-                    Console.Write("Buzz");
-                }
-                else
-                {
-                    Console.Write(num);
-                }
-                Console.WriteLine();
-            }
         }
     }
 }

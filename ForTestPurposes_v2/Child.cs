@@ -23,7 +23,7 @@ namespace ForTestPurposes
     // Printing method:
     public void PrintChild()
     {
-        Console.WriteLine("{0}, {1} years old.", name, age);
+        Console.WriteLine("{0} is {1} years old.", name, age);
     }
 }
 }
