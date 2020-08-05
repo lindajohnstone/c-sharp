@@ -20,7 +20,10 @@ namespace ForTestPurposes
             this.startNumber = startNumber;
             this.endNumber = endNumber;
         }
-
+        public void CreateFizzBuzz()
+        {
+            // use to get user input. not implemented
+        }
         public void PrintFizzBuzz()
         {
             for(var num = 1; num <= 100; num++)

@@ -1,0 +1,5 @@
+Today:
+** added to Person class to create person - it works
+** added to Child class to create child - it works
+** added SwitchNum class - does not execute switch
+
