@@ -2,4 +2,9 @@ Today:
 ** added to Person class to create person - it works
 ** added to Child class to create child - it works
 ** added SwitchNum class - does not execute switch
+** used Quorum info on Confluence to create plan
+** Research into Foundational Programming concepts
+** mentor meeting - Simon
+	** looked at some concepts - array, list collection
+	** looked at PaySlipProblem
 

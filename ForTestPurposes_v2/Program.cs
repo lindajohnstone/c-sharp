@@ -19,6 +19,7 @@ namespace ForTestPurposes
                 switch(num)
                 {
                     case 1:
+                        Console.WriteLine("Yay");
                         Person person = new Person();
                         person.CreateMgcYrCal();
                         break;
