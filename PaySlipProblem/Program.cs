@@ -5,21 +5,29 @@ namespace PaySlipProblem
 {
     class Program
     {
-        const string welcomeMessage = "Welcome to the payslip generator!";
-        const string payslipGeneratedMessage = "Your payslip has been generated:";
-        const string endMessage  = "Thank you for using MYOB!";
+        
         static void Main(string[] args)
         {
-            Console.WriteLine(welcomeMessage);
+            Console.WriteLine(Constants.WelcomeMessage);
             Console.WriteLine("");
             Person employee = new Person();
             employee.CreatePerson();
-            
+
             Payslip newUser = new Payslip();
-            newUser.CreatePayslip();
+            newUser.IncomeUserInput();
+            newUser.SuperUserInput();
+            newUser.StartDate();
+            newUser.EndDate();
+
+            Console.WriteLine();
+            Console.WriteLine(Constants.PayslipGeneratedMessage);
+            Console.WriteLine();
 
             employee.PrintPerson();
             newUser.PrintDetails();
+            Console.WriteLine();
+
+            Console.WriteLine(Constants.EndMessage);
         }
         
     }

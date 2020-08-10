@@ -40,11 +40,11 @@ UPDATE 6/8:
 ?? How to validate correct input - double
 ====== improvements 6/8 ==
 ** const - eg line 31 Payslip.cs
-** double not used for money - use decimal 
-** 12 months - change to const months - not in Payslip class - const (Constants) class
+** double not used for money - use decimal (done 7/8)
+** 12 months - change to const months - not in Payslip class - const (Constants) class (done 7/8)
 ** tests TDD - new project
 ** reference PayslipProblem project
-I
+
 HOW TO CREATE TEST PROJECT using vscode
 ** make a new directory mkdir <dir-name> using .tests as part
 ** type 'dotnet new xunit' (type of test required)
@@ -53,6 +53,36 @@ HOW TO CREATE TEST PROJECT using vscode
 ** 'dotnet test'
 ** [Fact]
 ** [Theory] - inline data  
+
+https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July+2020+-+A+Practical+Introduction+to+TDD
+
+====== improvements 7/8 ==
+** methods more specific names - eg CalcGrossPay changed to CalculateAnnualIncomeToGrossMonthlyIncome (begun 7/8)
+** added Constants.cs
+** create Person.cs - move class from Program.cs
+** Validations class?? (Last thing)
+	** decimals - Decimal.TryParse(value, out number)(??)
+	** strings -
+		decimal number3 = 0;
+		numString = "27.3"; //"27" is also a valid decimal
+		canConvert = decimal.TryParse(numString, out number3);
+		if (canConvert == true)
+  			Console.WriteLine("number3 now = {0}", number3);
+		else
+  			Console.WriteLine("number3 is not a valid decimal");
+** format correctly
+** tax calculation using arrays or lists?
+
+====== improvements 10/8 ==
+** rest of method names changed to more specific names
+** payment dates added
+** how to format date so that single digit becomes 2 digits??
+	** use substring to isolate number??
+	** if number.length == 1, make it 2 digits ** works
+	** can dates be called??
+** validate date so that full name not abbreviation of month returned
+** tax calculation - base[n], threshold[n], rate[n], percentage[n]
+	** use indexof. (How??) 
 
 
 
