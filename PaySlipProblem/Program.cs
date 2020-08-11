@@ -47,9 +47,9 @@ namespace PaySlipProblem
         public void CreatePerson()
         {
             Console.Write("Please input your name: ");
-            name = Console.ReadLine();
+            name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
             Console.Write("Please input your surname: ");
-            surname = Console.ReadLine();
+            surname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
         }
         public void PrintPerson()
         {

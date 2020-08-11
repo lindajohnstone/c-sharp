@@ -84,5 +84,44 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 ** tax calculation - base[n], threshold[n], rate[n], percentage[n]
 	** use indexof. (How??) 
 
-
-
+====== improvements 11.8 ==
+** tax calculation
+	** indexof did not work
+	** tried foreach loop - error: Unhandled exception. 					System.IndexOutOfRangeException: Index was outside the bounds of the array.
+	** for loop worked
+	** old code:
+		if (income > taxThreshold[3])
+            	{
+                	tax = baseTax[3] + ((income - (taxThreshold[3])) * taxRate[3]);
+            	}
+            	else if (income > taxThreshold[2])
+            	{
+               		tax = baseTax[2] + ((income - (taxThreshold[2])) * taxRate[2]);
+            	}
+            	else if (income > taxThreshold[1])
+            	{
+               		tax = baseTax[1] + ((income - (taxThreshold[1])) * taxRate[1]);
+            	}
+            	else if (income > taxThreshold[0])
+            	{
+               		tax = baseTax[0] + ((income - (taxThreshold[0])) * taxRate[0]);
+            	}
+            	else
+            	{
+                	tax = 0; 
+            	}
+	** new code:
+	for (int num = 0; num < taxThreshold.Length; num++)
+            { 
+                if (income > taxThreshold[num])
+                {
+                    tax = baseTax[num] + ((income - (taxThreshold[num])) * taxRate[num]);
+                }
+            }
+** errors 
+	** thrown if date entered as only one substring. Need to validate so exception does not happen
+	** income, super need to be a number - now working - instead of same code both methods - already tried - error CS0029: Cannot implicitly convert type 'void' to 'decimal'
+	** name, surname not numbers??
+** formatting still required:
+	** name, surname, month(??) ToTitleCase (first letter capitalised)
+	** date format as day (2 digits), month in letters
