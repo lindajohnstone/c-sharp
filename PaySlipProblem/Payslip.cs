@@ -28,27 +28,37 @@ namespace PaySlipProblem
         }
         public void CalculateTax(decimal income)
         {
+            //int num = 0;
             /*
                 logic:
                 check which taxThreshold[num].indexOf income falls into 
-                use taxThreshold[].indexOf ??
+                use taxThreshold[].indexOf ?? - does not work
                 tax = baseTax[num] + ((income - taxThreshold[num])) * taxRate[num];
                 what loop??
-             */
-            decimal searchTaxThreshold = income; // 
-            int index = Array.IndexOf(taxThreshold, searchTaxThreshold);
-            //if (income > taxThreshold[3] + 1)
-            //{
-            /*  }
-            else if (income > taxThreshold[2] + 1)
+            */
+    
+            foreach(int num in taxThreshold)
+            { // System.IndexOutOfRangeException: Index was outside the bounds of the array.
+                if (income > taxThreshold[num])
+                {
+                    tax = baseTax[num] + ((income - (taxThreshold[num])) * taxRate[num]);
+                }
+            }
+            
+            //}
+            /* if (income > taxThreshold[3])
+            {
+                tax = baseTax[3] + ((income - (taxThreshold[3])) * taxRate[3]);
+            }
+            else if (income > taxThreshold[2])
             {
                tax = baseTax[2] + ((income - (taxThreshold[2])) * taxRate[2]);
             }
-            else if (income > taxThreshold[1] + 1)
+            else if (income > taxThreshold[1])
             {
                tax = baseTax[1] + ((income - (taxThreshold[1])) * taxRate[1]);
             }
-            else if (income > taxThreshold[0] + 1)
+            else if (income > taxThreshold[0])
             {
                tax = baseTax[0] + ((income - (taxThreshold[0])) * taxRate[0]);
             }
@@ -56,8 +66,8 @@ namespace PaySlipProblem
             {
                 tax = 0; 
             }   */
-            //tax = tax / Constants.Months; 
-            tax = index;
+            tax = tax / Constants.Months; 
+            //tax = index;
         }
         public void CalculateSuper(decimal income, decimal superRate)
         {
