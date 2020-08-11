@@ -49,7 +49,7 @@ namespace PaySlipProblem
             Console.Write("Please input your name: ");
             name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
             Console.Write("Please input your surname: ");
-            surname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
+            surname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine();
         }
         public void PrintPerson()
         {
