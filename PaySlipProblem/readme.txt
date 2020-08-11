@@ -125,3 +125,11 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 ** formatting still required:
 	** name, surname, month(??) ToTitleCase (first letter capitalised)
 	** date format as day (2 digits), month in letters
+** income, super as numbers - now fixed (during mentor session)
+** created TaxableIncomeTax class - now foreach loop works
+====== other info ==
+** static class does not need to be instantiated (don't need to use keyword 'new')
+====== homework ==
+** sort array: write code - which class is responsible
+** how to stop foreach loop when info found - not 'break'
+** ask 3 questions each day

@@ -5,7 +5,7 @@ namespace PaySlipProblem
         public decimal Threshold { get; set; } //property
         public decimal Rate { get; set; }
         public decimal Base { get; set; }
-        private decimal _monthlyIncome;
+        /* private decimal _monthlyIncome;
         public decimal AnnualIncome 
         {
             get 
@@ -17,12 +17,12 @@ namespace PaySlipProblem
                 _monthlyIncome = value / 12;
                 
             }
-        }
+        } */
         
     }
     public class TaxableIncomeTaxArray
     {
-        public static TaxableIncomeTax[] Get() // static don't need to use new
+        public static TaxableIncomeTax[] Get() // static don't need to use new (instantiate)
         {
             return new[] {
                 new TaxableIncomeTax
