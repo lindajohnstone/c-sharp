@@ -1,114 +1,117 @@
 using System;
-using System.Globalization;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PaySlipProblem
 {
     public class Payslip
     {
-        private double income;
-        private double tax;
-        private double netPay;
-        private double grossPay;
-        private double super;
-        private double superRate;
-        const double taxLevel1 = 18200;
-        const double taxLevel2 = 37000;
-        const double taxLevel3 = 87000;
-        const double taxLevel4 = 180000;
+
+        private decimal income;
+        private decimal tax;
+        private decimal netPay;
+        private decimal grossPay;
+        private decimal super;
+        private decimal superRate;
+        private string[] startDate;
+        private string endDate;
+
         //constructor
         public Payslip()
         {
             income = 0;
         }
-        public Payslip(double income)
+        public Payslip(decimal income)
         {
             this.income = income;
         }
-        public void CalcTax(double income)
+        public void CalculateTax(decimal income)
         {
-            if (income > taxLevel4 + 1)
-            {
-               tax = 54232 + ((income - (taxLevel4)) * 0.45); 
+            var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
+            var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
+            
+            foreach (var taxableIncomeTax in query)
+            { 
+                if (income > taxableIncomeTax.Threshold)
+                {
+                    tax = taxableIncomeTax.Base + ((income - (taxableIncomeTax.Threshold)) * taxableIncomeTax.Rate);
+                    break;
+                }
             }
-            else if (income > taxLevel3 +1)
-            {
-                tax = 19822 + ((income - taxLevel3) * 0.37);
-            }
-            else if (income > taxLevel2 + 1)
-            {
-                tax = 3572 + ((income - taxLevel2) * 0.325);
-            }
-            else if (income > taxLevel1 +1)
-            {
-                tax = (income - taxLevel1) * 0.19;
-            }
-            else
-            {
-                tax = 0; 
-            }  
-            tax = tax / 12; 
+            tax = tax / Constants.Months; 
         }
-        public void CalcSuper(double income, double superRate)
+        public void CalculateSuper(decimal income, decimal superRate)
         {
-            super = (income / 12) * superRate;
+            super = (income / Constants.Months) * superRate;
         }
-        public void CalcGrossPay(double income)
+        public void CalculateGrossPay(decimal income)
         {
-            grossPay = income / 12;
+            grossPay = income / Constants.Months;
         }
-        public void CalcNetPay()
+        public void CalculateNetPay()
         {
             netPay = grossPay - tax;
         }
-        public void InputSalarySuper()
+        private decimal ReadUserInputAsDecimal() 
+        { 
+            var isValidDecimal = decimal.TryParse(Console.ReadLine(), out var validateDecimal); 
+            if (isValidDecimal)
+            {
+                return validateDecimal;
+            }
+            else
+            {
+                Console.WriteLine("Input is not a valid number. ");
+                return ReadUserInputAsDecimal(); //recursive
+            } 
+        }
+        public void IncomeUserInput()
         {
             Console.Write("Please input your annual salary: ");
-            //if(double.TryParse(Console.ReadLine(), out var newNum)) // check it is a number
-            //{
-                income = Convert.ToDouble(Console.ReadLine()); // terminology to determine if a number??
-            //}
-            //else 
-            //{
-            //    Console.WriteLine("Sorry, input should be numbers. Please try again");
-            //}
-            Console.Write("Please input your super rate: ");
-            superRate = Convert.ToDouble(Console.ReadLine()) / 100; // make it a percentage
+           
+            income = ReadUserInputAsDecimal();
         }
-        public void CreatePayslip()
+        public void SuperUserInput()
         {
-            InputSalarySuper();
+            Console.Write("Please input your super rate: ");
+        
+            superRate = ReadUserInputAsDecimal() / 100; // make it a percentage
+        }
+        public void PaymentPeriod()
+        {
+            Console.Write("Pay Period: ");
+            if (startDate[0].Length < 2)
+            {
+                Console.Write("0{0}", startDate[0]);
+            }
+            else
+            {
+                Console.Write(startDate[0]);
+            }
+            Console.WriteLine(" {0} - {1}", startDate[1],endDate);
+        }
+        public void StartDate()
+        {
+            Console.Write("Please enter your payment start date: ");
+            startDate = Console.ReadLine().Split(default(Char[]), StringSplitOptions.RemoveEmptyEntries);
+        }
+        public string EndDate()
+        {
+            Console.Write("Please enter your payment end date: ");
+            endDate = Console.ReadLine();
+            return endDate;
         }
         public void PrintDetails()
         {
-            CalcGrossPay(income);
+            PaymentPeriod();
+            CalculateGrossPay(income);
             Console.WriteLine("Gross Income: {0:F0}", grossPay);
-            CalcTax(income);
+            CalculateTax(income);
             Console.WriteLine("Income tax: {0:F0}",tax);
-            CalcNetPay();
+            CalculateNetPay();
             Console.WriteLine("Net Income:{0:F0}", netPay);
-            CalcSuper(income, superRate);
+            CalculateSuper(income, superRate);
             Console.WriteLine("Super: {0:F0}", super);
-            /* complete expected output:
-                Welcome to the payslip generator!
-
-                Please input your name: John  
-                Please input your surname: Doe  
-                Please enter your annual salary: 60050
-                Please enter your super rate: 9
-                Please enter your payment start date: 1 March
-                Please enter your payment end date: 31 March
-
-                Your payslip has been generated:
-
-                Name: John Doe  
-                Pay Period: 01 March – 31 March  
-                Gross Income: 5004  
-                Income Tax: 922 
-                Net Income:4082 
-                Super: 450  
-
-                Thank you for using MYOB!
-            */
         }
     }
 }
