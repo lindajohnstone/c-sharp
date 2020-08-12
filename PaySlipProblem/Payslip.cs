@@ -6,6 +6,7 @@ namespace PaySlipProblem
 {
     public class Payslip
     {
+
         private decimal income;
         private decimal tax;
         private decimal netPay;
@@ -14,7 +15,7 @@ namespace PaySlipProblem
         private decimal superRate;
         private string[] startDate;
         private string endDate;
-        
+
         //constructor
         public Payslip()
         {

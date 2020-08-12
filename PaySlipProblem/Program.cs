@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Globalization;
 
 namespace PaySlipProblem
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             Console.WriteLine(Constants.WelcomeMessage);
@@ -29,7 +28,6 @@ namespace PaySlipProblem
 
             Console.WriteLine(Constants.EndMessage);
         }
-        
     }
     class Person
     {
@@ -47,9 +45,13 @@ namespace PaySlipProblem
         public void CreatePerson()
         {
             Console.Write("Please input your name: ");
+
             name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
             Console.Write("Please input your surname: ");
             surname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
+            name = Console.ReadLine();
+            Console.Write("Please input your surname: ");
+            surname = Console.ReadLine();
         }
         public void PrintPerson()
         {
