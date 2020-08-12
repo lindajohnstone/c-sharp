@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace PaySlipProblem
 {
     public class TaxableIncomeTax
@@ -18,7 +21,7 @@ namespace PaySlipProblem
                 
             }
         } */
-        
+      
     }
     public class TaxableIncomeTaxArray
     {
@@ -48,7 +51,7 @@ namespace PaySlipProblem
                     Rate = 0.45m,
                     Base = 54232, 
                 }
-            };
+            }; 
         }
     }
 }

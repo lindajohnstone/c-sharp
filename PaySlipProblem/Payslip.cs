@@ -1,5 +1,6 @@
 using System;
-using System.Globalization;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PaySlipProblem
 {
@@ -25,23 +26,15 @@ namespace PaySlipProblem
         }
         public void CalculateTax(decimal income)
         {
-            //int num = 0;
-            /*
-                logic:
-                check which taxThreshold[num].indexOf income falls into 
-                use taxThreshold[].indexOf ?? - does not work
-                tax = baseTax[num] + ((income - taxThreshold[num])) * taxRate[num];
-                what loop??
-            */
-            /*
-                foreach use three dimensional array
-            */
             var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
-            foreach (var taxableIncomeTax in taxableIncomeTaxArray)
+            var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
+            
+            foreach (var taxableIncomeTax in query)
             { 
                 if (income > taxableIncomeTax.Threshold)
                 {
                     tax = taxableIncomeTax.Base + ((income - (taxableIncomeTax.Threshold)) * taxableIncomeTax.Rate);
+                    break;
                 }
             }
             tax = tax / Constants.Months; 

@@ -133,3 +133,11 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 ** sort array: write code - which class is responsible
 ** how to stop foreach loop when info found - not 'break'
 ** ask 3 questions each day
+====== 12/8 ==
+** sorting an array - Array.Sort() - requires two values, 1st array value, 2nd comparable (can't be same - throws error)
+** stop foreach when value is reached - tax != 0 creates an error
+
+Module 1: 24th Aug
+Module 2a: 27th Aug
+Module 2b: 3rd Sep
+Module 3: 9th Sep
