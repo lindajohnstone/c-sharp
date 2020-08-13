@@ -5,47 +5,43 @@ namespace PaySlipProblem
 {
     class Program
     {
-        const string welcomeMessage = "Welcome to the payslip generator!";
-        const string payslipGeneratedMessage = "Your payslip has been generated:";
-        const string endMessage  = "Thank you for using MYOB!";
         static void Main(string[] args)
         {
-            Console.WriteLine(welcomeMessage);
-            Console.WriteLine("");
+            Console.WriteLine(Constants.WelcomeMessage + Environment.NewLine);
+            //Console.WriteLine("");
             Person employee = new Person();
-            employee.CreatePerson();
-            
+            employee.GetPersonNameSurname();
+
             Payslip newUser = new Payslip();
-            newUser.CreatePayslip();
+            newUser.GetUserData();
+
+            //Console.WriteLine();
+            Console.WriteLine(Environment.NewLine + Constants.PayslipGeneratedMessage + Environment.NewLine);
+            //Console.WriteLine();
 
             employee.PrintPerson();
             newUser.PrintDetails();
+            Console.WriteLine();
+
+            Console.WriteLine(Constants.EndMessage);
         }
-        
     }
     class Person
     {
-        private string name;
-        private string surname;
-        public Person()
-        {
-            name = "N/A";
-        }
-        public Person(string name, string surname)
-        {
-            this.name = name;
-            this.surname = surname;
-        }
-        public void CreatePerson()
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        //public Payslip EmployeeData { get; set; } // link person class to payslip class
+        public void GetPersonNameSurname()
         {
             Console.Write("Please input your name: ");
-            name = Console.ReadLine();
+            Name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
             Console.Write("Please input your surname: ");
-            surname = Console.ReadLine();
+            Surname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
         }
         public void PrintPerson()
         {
-            Console.WriteLine("{0} {1}", name, surname);
+            Console.WriteLine("{0} {1}", Name, Surname);
         }
+        //public void GetPersonPayslip
     }
 }
