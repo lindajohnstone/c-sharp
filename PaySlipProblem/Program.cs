@@ -20,7 +20,7 @@ namespace PaySlipProblem
             employee.PrintPerson();
             newUser.PrintDetails();
 
-            Console.Write(Constants.EndMessage);
+            Console.WriteLine(Environment.NewLine + Constants.EndMessage);
         }
     }
     class Person

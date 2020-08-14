@@ -76,7 +76,6 @@ namespace PaySlipProblem
             string date = String.Empty;
             if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
             {
-                //startDate = Convert.ToString(dateValue); writes date as 01/03/2020 00:00:00
                 date = String.Format("{0:dd MMMM, yyyy}", dateValue);
             }
             else 
@@ -88,32 +87,13 @@ namespace PaySlipProblem
         }
         public void StartDate()
         {
-            Console.Write("Please enter your payment start date (date Month): ");
+            Console.Write("Please enter your payment start date (date Month Year): ");
             startDate = DateFormat();
-            /* if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
-            {
-                //startDate = Convert.ToString(dateValue); writes date as 01/03/2020 00:00:00
-                startDate = String.Format("{0:dd MMMM}", dateValue);
-            }
-            else 
-            {
-                Console.Write("Please try again. ");
-                StartDate();
-            } */
         }
         public void EndDate()
         {
-            Console.Write("Please enter your payment end date (date Month): ");
+            Console.Write("Please enter your payment end date (date Month Year): ");
             endDate = DateFormat();
-           /*  if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
-            {
-                endDate = String.Format("{0:dd MMMM}", dateValue);
-            }
-            else 
-            {
-                Console.Write("Please try again. ");
-                EndDate();
-            } */
         }
         public void PrintDetails()
         {
@@ -121,7 +101,7 @@ namespace PaySlipProblem
             CalculateGrossPay();
             Console.WriteLine("Gross Income: {0:F0}", grossPay);
             CalculateTax();
-            Console.WriteLine("Income tax: {0:F0}", tax);
+            Console.WriteLine("Income Tax: {0:F0}", tax);
             CalculateNetPay();
             Console.WriteLine("Net Income: {0:F0}", netPay);
             CalculateSuper();

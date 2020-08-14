@@ -156,6 +156,34 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 	** format date so that output == (decimal)(decimal)(space)(fullMonthName) e.g. 01 March
 ====== Update 14/8 ==
 ** date now formatting correctly
+	** (1st) startDate = Convert.ToString(dateValue); // writes date as 01/03/2020 00:00:00
+	** (2nd) date = String.Format("{0:dd MMMM, yyyy}", dateValue); // writes date as dd MonthName, year
+            }
+** method added to ensure date is on correct format:
+	** originally in both methods:
+		* if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
+            	{
+                	//startDate = Convert.ToString(dateValue); writes date as 01/03/2020 00:00:00
+            	    	startDate = String.Format("{0:dd MMMM}", dateValue);
+            	}
+            	else 
+            	{
+                	Console.Write("Please try again. ");
+                	StartDate();
+            	}
+	** separate method (modified)
+		** string date = String.Empty;
+            	   if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
+            	   {
+                	date = String.Format("{0:dd MMMM, yyyy}", dateValue);
+            	   }
+            	   else 
+            	   {
+                	Console.Write("Please try again. ");
+                	date = DateFormat();
+            	   }
+            	   return date;
+
 
 
 
