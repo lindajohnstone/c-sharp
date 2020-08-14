@@ -154,6 +154,8 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 	** ReadUserInputAsDecimal - income and super are decimals
 	** name and surname to be valid input - no numbers, just letters, spaces (for  and some special characters (as in O'Brien, and '-' for hyphenated names) ?? Need to go this far??
 	** format date so that output == (decimal)(decimal)(space)(fullMonthName) e.g. 01 March
+====== Update 14/8 ==
+** date now formatting correctly
 
 
 
