@@ -67,11 +67,11 @@ namespace PaySlipProblem
             StartDate();
             EndDate();
         }
-        public void PaymentPeriod()
+        public void PrintPaymentPeriod()
         {
             Console.WriteLine("Payment Period: {0} - {1}", startDate, endDate);
         }
-        private string DateFormat()
+        private string CheckDateFormat()
         {
             string date = String.Empty;
             if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
@@ -81,30 +81,35 @@ namespace PaySlipProblem
             else 
             {
                 Console.Write("Please try again. ");
-                date = DateFormat();
+                date = CheckDateFormat();
             }
             return date;
         }
         public void StartDate()
         {
             Console.Write("Please enter your payment start date (date Month Year): ");
-            startDate = DateFormat();
+            startDate = CheckDateFormat();
         }
         public void EndDate()
         {
             Console.Write("Please enter your payment end date (date Month Year): ");
-            endDate = DateFormat();
+            endDate = CheckDateFormat();
+        }
+        public void DoCalculations()
+        {
+            CalculateGrossPay();
+            CalculateTax();
+            CalculateNetPay();
+            CalculateSuper();
         }
         public void PrintDetails()
         {
-            PaymentPeriod();
-            CalculateGrossPay();
+            PrintPaymentPeriod();
+            DoCalculations();
+
             Console.WriteLine("Gross Income: {0:F0}", grossPay);
-            CalculateTax();
             Console.WriteLine("Income Tax: {0:F0}", tax);
-            CalculateNetPay();
             Console.WriteLine("Net Income: {0:F0}", netPay);
-            CalculateSuper();
             Console.WriteLine("Super: {0:F0}", super);
         }
     }
