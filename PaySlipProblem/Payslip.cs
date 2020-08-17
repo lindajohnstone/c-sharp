@@ -1,30 +1,45 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Globalization;
 
 namespace PaySlipProblem
 {
     public class Payslip
     {
 
-        private decimal income;
+
+        private decimal annualIncome;
         private decimal tax;
         private decimal netPay;
         private decimal grossPay;
         private decimal super;
         private decimal superRate;
-        private string[] startDate;
-        private string endDate;
 
-        //constructor
-        public Payslip()
+        private string startDate;
+        private string endDate;
+        public void CalculateTax()
+
         {
-            income = 0;
+            var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
+            var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
+            
+            foreach (var taxableIncomeTax in query)
+            { 
+                if (annualIncome > taxableIncomeTax.Threshold)
+                {
+                    tax = taxableIncomeTax.Base + ((annualIncome - (taxableIncomeTax.Threshold)) * taxableIncomeTax.Rate);
+                    break;
+                }
+            }
+            tax = tax / Constants.Months; 
         }
-        public Payslip(decimal income)
+
+        public void CalculateSuper()
         {
-            this.income = income;
+            super = grossPay * superRate;
         }
+
         public void CalculateTax(decimal income)
         {
             var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
@@ -44,18 +59,21 @@ namespace PaySlipProblem
         {
             super = (income / Constants.Months) * superRate;
         }
-        public void CalculateGrossPay(decimal income)
+ 
+        public void CalculateGrossPay()
         {
-            grossPay = income / Constants.Months;
+            grossPay = annualIncome / Constants.Months;
         }
         public void CalculateNetPay()
         {
             netPay = grossPay - tax;
         }
-        private decimal ReadUserInputAsDecimal() 
+
+     
+        private decimal ReadUserInput() 
         { 
-            var isValidDecimal = decimal.TryParse(Console.ReadLine(), out var validateDecimal); 
-            if (isValidDecimal)
+            //var isValidDecimal = decimal.TryParse(Console.ReadLine(), out var validateDecimal); 
+            if (decimal.TryParse(Console.ReadLine(), out var validateDecimal))
             {
                 return validateDecimal;
             }
@@ -77,19 +95,7 @@ namespace PaySlipProblem
         
             superRate = ReadUserInputAsDecimal() / 100; // make it a percentage
         }
-        public void PaymentPeriod()
-        {
-            Console.Write("Pay Period: ");
-            if (startDate[0].Length < 2)
-            {
-                Console.Write("0{0}", startDate[0]);
-            }
-            else
-            {
-                Console.Write(startDate[0]);
-            }
-            Console.WriteLine(" {0} - {1}", startDate[1],endDate);
-        }
+      
         public void StartDate()
         {
             Console.Write("Please enter your payment start date: ");
@@ -100,17 +106,66 @@ namespace PaySlipProblem
             Console.Write("Please enter your payment end date: ");
             endDate = Console.ReadLine();
             return endDate;
+            
+        }
+        public void GetUserData()
+        {
+            Console.Write("Please input your annual salary: ");
+            annualIncome = ReadUserInput();
+
+            Console.Write("Please input your super rate: ");
+            superRate = ReadUserInput() / 100; // make it a percentage
+
+            StartDate();
+            EndDate();
+        }
+        public void PaymentPeriod()
+        {
+            Console.WriteLine("Payment Period: {0} - {1}", startDate, endDate);
+        }
+        public void StartDate()
+        {
+            Console.Write("Please enter your payment start date (date Month): ");
+            // todo: method to parse date??
+            if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
+            {
+                //startDate = Convert.ToString(dateValue); writes date as 01/03/2020 00:00:00
+                startDate = String.Format("{0:dd MMMM}", dateValue);
+            }
+            else 
+            {
+                Console.Write("Please try again. ");
+                StartDate();
+            }
+        }
+        public void EndDate()
+        {
+            Console.Write("Please enter your payment end date (date Month): ");
+            if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
+            {
+                endDate = String.Format("{0:dd MMMM}", dateValue);
+            }
+            else 
+            {
+                Console.Write("Please try again. ");
+                EndDate();
+            }
+
         }
         public void PrintDetails()
         {
             PaymentPeriod();
-            CalculateGrossPay(income);
+
+            
+
+            CalculateGrossPay();
             Console.WriteLine("Gross Income: {0:F0}", grossPay);
-            CalculateTax(income);
-            Console.WriteLine("Income tax: {0:F0}",tax);
+            CalculateTax();
+            Console.WriteLine("Income tax: {0:F0}", tax);
             CalculateNetPay();
             Console.WriteLine("Net Income:{0:F0}", netPay);
-            CalculateSuper(income, superRate);
+            CalculateSuper();
+
             Console.WriteLine("Super: {0:F0}", super);
         }
     }

@@ -7,20 +7,17 @@ namespace PaySlipProblem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Constants.WelcomeMessage);
-            Console.WriteLine("");
+            Console.WriteLine(Constants.WelcomeMessage + Environment.NewLine);
+            //Console.WriteLine("");
             Person employee = new Person();
-            employee.CreatePerson();
+            employee.GetPersonNameSurname();
 
             Payslip newUser = new Payslip();
-            newUser.IncomeUserInput();
-            newUser.SuperUserInput();
-            newUser.StartDate();
-            newUser.EndDate();
+            newUser.GetUserData();
 
-            Console.WriteLine();
-            Console.WriteLine(Constants.PayslipGeneratedMessage);
-            Console.WriteLine();
+            //Console.WriteLine();
+            Console.WriteLine(Environment.NewLine + Constants.PayslipGeneratedMessage + Environment.NewLine);
+            //Console.WriteLine();
 
             employee.PrintPerson();
             newUser.PrintDetails();
@@ -31,31 +28,20 @@ namespace PaySlipProblem
     }
     class Person
     {
-        private string name;
-        private string surname;
-        public Person()
-        {
-            name = "N/A";
-        }
-        public Person(string name, string surname)
-        {
-            this.name = name;
-            this.surname = surname;
-        }
-        public void CreatePerson()
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        //public Payslip EmployeeData { get; set; } // link person class to payslip class
+        public void GetPersonNameSurname()
         {
             Console.Write("Please input your name: ");
-
-            name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
+            Name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
             Console.Write("Please input your surname: ");
-            surname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
-            name = Console.ReadLine();
-            Console.Write("Please input your surname: ");
-            surname = Console.ReadLine();
+            Surname = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(Console.ReadLine());
         }
         public void PrintPerson()
         {
-            Console.WriteLine("{0} {1}", name, surname);
+            Console.WriteLine("{0} {1}", Name, Surname);
         }
+        //public void GetPersonPayslip
     }
 }

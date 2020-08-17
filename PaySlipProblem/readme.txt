@@ -137,7 +137,29 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 ** sorting an array - Array.Sort() - requires two values, 1st array value, 2nd comparable (can't be same - throws error)
 ** stop foreach when value is reached - tax != 0 creates an error
 
+
 Module 1: 24th Aug
 Module 2a: 27th Aug
 Module 2b: 3rd Sep
 Module 3: 9th Sep
+=======
+====== latest 12/8 ==
+** used orderby to organise (sort) tax threshold, base, rate objects
+** updated orderby to orderbydescending to ensure that the code runs quicker - calculation only performed once
+** make sure that I understand what is required
+** validations still required
+====== 13/8 thoughts + extras ==
+** payslip calculations class?? == NO
+** methods involving calculation:
+	** CalculateTax
+	** CalculateSuper
+	** CalculateGrossPay
+	** CalculateNetPay
+** validation / formatting class??
+** method involving (or will involve) validation / formatting 
+	** ReadUserInputAsDecimal - income and super are decimals
+	** name and surname to be valid input - no numbers, just letters, spaces (for  and some special characters (as in O'Brien, and '-' for hyphenated names) ?? Need to go this far??
+	** format date so that output == (decimal)(decimal)(space)(fullMonthName) e.g. 01 March
+====== Update 14/8 ==
+** date now formatting correctly
+
