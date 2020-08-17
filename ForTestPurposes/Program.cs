@@ -12,7 +12,7 @@ namespace ForTestPurposes
             var SwitchNum = Console.ReadLine();
             var newNum = 0;
             
-            if (int.TryParse(SwitchNum, out newNum)) //if not a whole number input give an error
+            if (!int.TryParse(SwitchNum, out newNum)) //if not a whole number input give an error
             {
                 Console.WriteLine("Not an integer");
             }

@@ -8,15 +8,18 @@ namespace PaySlipProblem
     public class Payslip
     {
 
+
         private decimal annualIncome;
         private decimal tax;
         private decimal netPay;
         private decimal grossPay;
         private decimal super;
         private decimal superRate;
+
         private string startDate;
         private string endDate;
         public void CalculateTax()
+
         {
             var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
             var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
@@ -31,10 +34,32 @@ namespace PaySlipProblem
             }
             tax = tax / Constants.Months; 
         }
+
         public void CalculateSuper()
         {
             super = grossPay * superRate;
         }
+
+        public void CalculateTax(decimal income)
+        {
+            var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
+            var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
+            
+            foreach (var taxableIncomeTax in query)
+            { 
+                if (income > taxableIncomeTax.Threshold)
+                {
+                    tax = taxableIncomeTax.Base + ((income - (taxableIncomeTax.Threshold)) * taxableIncomeTax.Rate);
+                    break;
+                }
+            }
+            tax = tax / Constants.Months; 
+        }
+        public void CalculateSuper(decimal income, decimal superRate)
+        {
+            super = (income / Constants.Months) * superRate;
+        }
+ 
         public void CalculateGrossPay()
         {
             grossPay = annualIncome / Constants.Months;
@@ -43,6 +68,8 @@ namespace PaySlipProblem
         {
             netPay = grossPay - tax;
         }
+
+     
         private decimal ReadUserInput() 
         { 
             //var isValidDecimal = decimal.TryParse(Console.ReadLine(), out var validateDecimal); 
@@ -53,8 +80,33 @@ namespace PaySlipProblem
             else
             {
                 Console.WriteLine("Input is not a valid number. ");
-                return ReadUserInput(); //recursive
+                return ReadUserInputAsDecimal(); //recursive
             } 
+        }
+        public void IncomeUserInput()
+        {
+            Console.Write("Please input your annual salary: ");
+           
+            income = ReadUserInputAsDecimal();
+        }
+        public void SuperUserInput()
+        {
+            Console.Write("Please input your super rate: ");
+        
+            superRate = ReadUserInputAsDecimal() / 100; // make it a percentage
+        }
+      
+        public void StartDate()
+        {
+            Console.Write("Please enter your payment start date: ");
+            startDate = Console.ReadLine().Split(default(Char[]), StringSplitOptions.RemoveEmptyEntries);
+        }
+        public string EndDate()
+        {
+            Console.Write("Please enter your payment end date: ");
+            endDate = Console.ReadLine();
+            return endDate;
+            
         }
         public void GetUserData()
         {
@@ -98,10 +150,14 @@ namespace PaySlipProblem
                 Console.Write("Please try again. ");
                 EndDate();
             }
+
         }
         public void PrintDetails()
         {
             PaymentPeriod();
+
+            
+
             CalculateGrossPay();
             Console.WriteLine("Gross Income: {0:F0}", grossPay);
             CalculateTax();
@@ -109,6 +165,7 @@ namespace PaySlipProblem
             CalculateNetPay();
             Console.WriteLine("Net Income:{0:F0}", netPay);
             CalculateSuper();
+
             Console.WriteLine("Super: {0:F0}", super);
         }
     }
