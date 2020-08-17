@@ -137,6 +137,12 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 ** sorting an array - Array.Sort() - requires two values, 1st array value, 2nd comparable (can't be same - throws error)
 ** stop foreach when value is reached - tax != 0 creates an error
 
+
+Module 1: 24th Aug
+Module 2a: 27th Aug
+Module 2b: 3rd Sep
+Module 3: 9th Sep
+=======
 ====== latest 12/8 ==
 ** used orderby to organise (sort) tax threshold, base, rate objects
 ** updated orderby to orderbydescending to ensure that the code runs quicker - calculation only performed once
@@ -183,22 +189,5 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
                 	date = DateFormat();
             	   }
             	   return date;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

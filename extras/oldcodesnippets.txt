@@ -1,0 +1,11 @@
+** From ForTestPurposes_v2 
+Program.cs
+	var newNum = 0;
+        while (int.TryParse(switchNum, out var newNum))
+	//if not a whole number input give an error ** code works, changing code to use while; while causes a continuous loop as int continually passed
+	bool boolChoice;
+	Console.WriteLine("Are you sure you want to exit? Please type 'yes' to exit and 'no' to continue.");
+	 
+	
+	
+	
