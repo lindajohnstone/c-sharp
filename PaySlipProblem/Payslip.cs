@@ -72,7 +72,6 @@ namespace PaySlipProblem
      
         private decimal ReadUserInput() 
         { 
-            //var isValidDecimal = decimal.TryParse(Console.ReadLine(), out var validateDecimal); 
             if (decimal.TryParse(Console.ReadLine(), out var validateDecimal))
             {
                 return validateDecimal;
@@ -103,6 +102,8 @@ namespace PaySlipProblem
 
             Console.Write("Please input your super rate: ");
             superRate = ReadUserInput() / 100; // make it a percentage
+            StartDate();
+            EndDate();
         }
         public void PrintPaymentPeriod()
         {
@@ -110,22 +111,17 @@ namespace PaySlipProblem
         }
         private string CheckDateFormat()
         {
-
-            Console.Write("Please enter your payment start date (date Month): ");
-            // todo: method to parse date??
+            string date = String.Empty;
             if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
             {
-                //startDate = Convert.ToString(dateValue); writes date as 01/03/2020 00:00:00
-                startDate = String.Format("{0:dd MMMM}", dateValue);
-
+                date = String.Format("{0:dd MMMM, yyyy}", dateValue);
             }
             else 
             {
                 Console.Write("Please try again. ");
-                startDate = CheckDateFormat();
-
+                date = CheckDateFormat();
             }
-            return startDate;
+            return date;
         }
         public void StartDate()
         {
@@ -139,7 +135,6 @@ namespace PaySlipProblem
         }
         public void DoCalculations()
         {
-            PrintPaymentPeriod();
             CalculateGrossPay();
             CalculateTax();
             CalculateNetPay();
@@ -147,8 +142,8 @@ namespace PaySlipProblem
         }
         public void PrintDetails()
         {
-            PrintPaymentPeriod();
             DoCalculations();
+            PrintPaymentPeriod();
 
             Console.WriteLine("Gross Income: {0:F0}", grossPay);
             Console.WriteLine("Income Tax: {0:F0}", tax);
