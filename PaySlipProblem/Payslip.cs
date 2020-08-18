@@ -7,19 +7,16 @@ namespace PaySlipProblem
 {
     public class Payslip
     {
-
-
         private decimal annualIncome;
         private decimal tax;
         private decimal netPay;
         private decimal grossPay;
         private decimal super;
         private decimal superRate;
-
         private string startDate;
         private string endDate;
-        public void CalculateTax()
 
+        public void CalculateTax()
         {
             var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
             var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
@@ -54,10 +51,6 @@ namespace PaySlipProblem
                 }
             }
             tax = tax / Constants.Months; 
-        }
-        public void CalculateSuper(decimal income, decimal superRate)
-        {
-            super = (income / Constants.Months) * superRate;
         }
  
         public void CalculateGrossPay()
