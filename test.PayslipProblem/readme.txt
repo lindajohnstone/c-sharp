@@ -11,6 +11,6 @@ Modify method to get correct results
 ** added calculation for net pay (gross pay - tax) - have 3 test cases
 ** added calculation for super (grossPay * (super / 100))
 ** prior to attempting tax calculations, push to GitHub
-
+** calculate tax - how to convert Calculations object to TaxableIncomeTax object
 
 

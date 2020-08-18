@@ -12,7 +12,10 @@ namespace PaySlipProblem
             Person employee = new Person();
             employee.GetPersonNameSurname();
 
-            Payslip newUser = new Payslip();
+            var calculations = new Calculations();
+
+            Payslip newUser = new Payslip(calculations);
+            
             newUser.GetUserData();
 
             Console.WriteLine(Environment.NewLine + Constants.PayslipGeneratedMessage + Environment.NewLine);

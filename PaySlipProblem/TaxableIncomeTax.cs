@@ -5,19 +5,6 @@ namespace PaySlipProblem
         public decimal Threshold { get; set; } //property
         public decimal Rate { get; set; }
         public decimal Base { get; set; }
-        /* private decimal _monthlyIncome;
-        public decimal AnnualIncome 
-        {
-            get 
-            { 
-                return _monthlyIncome * 12;
-            } 
-            set 
-            { 
-                _monthlyIncome = value / 12;
-                
-            }
-        } */
       
     }
     public class TaxableIncomeTaxArray

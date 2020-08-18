@@ -15,51 +15,11 @@ namespace PaySlipProblem
         private decimal superRate;
         private string startDate;
         private string endDate;
+        private Calculations _calculations;
 
-        public void CalculateTax()
+        public Payslip(Calculations calculations)
         {
-            var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
-            var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
-            
-            foreach (var taxableIncomeTax in query)
-            { 
-                if (annualIncome > taxableIncomeTax.Threshold)
-                {
-                    tax = taxableIncomeTax.Base + ((annualIncome - (taxableIncomeTax.Threshold)) * taxableIncomeTax.Rate);
-                    break;
-                }
-            }
-            tax = tax / Constants.Months; 
-        }
-
-        public void CalculateSuper()
-        {
-            super = grossPay * superRate;
-        }
-
-        public void CalculateTax(decimal income)
-        {
-            var taxableIncomeTaxArray = TaxableIncomeTaxArray.Get();
-            var query = taxableIncomeTaxArray.OrderByDescending(_ => _.Threshold).ToList();
-            
-            foreach (var taxableIncomeTax in query)
-            { 
-                if (income > taxableIncomeTax.Threshold)
-                {
-                    tax = taxableIncomeTax.Base + ((income - (taxableIncomeTax.Threshold)) * taxableIncomeTax.Rate);
-                    break;
-                }
-            }
-            tax = tax / Constants.Months; 
-        }
- 
-        public void CalculateGrossPay()
-        {
-            grossPay = annualIncome / Constants.Months;
-        }
-        public void CalculateNetPay()
-        {
-            netPay = grossPay - tax;
+            _calculations = calculations;
         }
 
      
@@ -75,18 +35,6 @@ namespace PaySlipProblem
                 return ReadUserInput(); //recursive
             } 
         }
-        public void IncomeUserInput()
-        {
-            Console.Write("Please input your annual salary: ");
-           
-            annualIncome = ReadUserInput();
-        }
-        public void SuperUserInput()
-        {
-            Console.Write("Please input your super rate: ");
-        
-            superRate = ReadUserInput() / 100; // make it a percentage
-        }
     
         public void GetUserData()
         {
@@ -94,7 +42,7 @@ namespace PaySlipProblem
             annualIncome = ReadUserInput();
 
             Console.Write("Please input your super rate: ");
-            superRate = ReadUserInput() / 100; // make it a percentage
+            superRate = ReadUserInput(); // make it a percentage
             StartDate();
             EndDate();
         }
@@ -128,10 +76,10 @@ namespace PaySlipProblem
         }
         public void DoCalculations()
         {
-            CalculateGrossPay();
-            CalculateTax();
-            CalculateNetPay();
-            CalculateSuper();
+            grossPay =  _calculations.CalculateMonthlyGrossPay(annualIncome);
+            tax = _calculations.CalculateMonthlyTax(annualIncome);
+            netPay =  _calculations.CalculateMonthlyNetPay(grossPay, tax);
+            super = _calculations.CalculateMonthlySuper(grossPay, superRate);
         }
         public void PrintDetails()
         {

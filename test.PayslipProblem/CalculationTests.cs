@@ -1,4 +1,5 @@
 using System;
+using PaySlipProblem;
 using Xunit;
 
 namespace test.PayslipProblem
@@ -9,7 +10,7 @@ namespace test.PayslipProblem
         [InlineData(60050, 5004)]
         [InlineData(87000, 7250)]
         [InlineData(87550, 7296)]
-        public void AnnualIncomeToGrossPayTest(decimal income, decimal expected)
+        public void Should_Return_MonthlyGrossPay_For_Income(decimal income, decimal expected)
         {
             //arrange
             var calculateGrossPay = new Calculations();
@@ -42,7 +43,7 @@ namespace test.PayslipProblem
         [InlineData(5004, 27, 1351)]
         [InlineData(5004, 15, 751)]
         [InlineData(4005, 9, 360)]
-        public void Super(decimal grossPay, decimal superRate, decimal expected)
+        public void CalculateSuper(decimal grossPay, decimal superRate, decimal expected)
         {
             // arrange 
             var calculateSuper = new Calculations();
@@ -51,6 +52,18 @@ namespace test.PayslipProblem
             // assert
             Assert.Equal(expected, monthlySuper);
         }
-
+        [Theory]
+        [InlineData(60050, 922)]
+        [InlineData(18200, 0)]
+        [InlineData(87000, 1652)]
+        public void CalculateTaxableIncomeTax(decimal income, decimal expected)
+        {
+            // arrange
+            var incomeTaxCalculator = new Calculations(); 
+            // act
+            var monthlyIncomeTax = incomeTaxCalculator.CalculateMonthlyTax(income);
+            // assert
+            Assert.Equal(expected, monthlyIncomeTax); 
+        }
     }
 }
