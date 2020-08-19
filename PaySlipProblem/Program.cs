@@ -13,8 +13,10 @@ namespace PaySlipProblem
             employee.GetPersonNameSurname();
 
             var calculations = new Calculations();
-
-            Payslip newUser = new Payslip(calculations);
+            var payslipIO = new PayslipIO();
+            var payslipInput = new PayslipInput(payslipIO);
+            
+            Payslip newUser = new Payslip(calculations, payslipInput);
             
             newUser.GetUserData();
 

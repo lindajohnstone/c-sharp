@@ -16,64 +16,33 @@ namespace PaySlipProblem
         private string startDate;
         private string endDate;
         private Calculations _calculations;
+        private PayslipInput _payslipInput;
 
-        public Payslip(Calculations calculations)
+        public Payslip(Calculations calculations, PayslipInput payslipInput)
         {
             _calculations = calculations;
-        }
-
-        private decimal ReadUserInput() 
-        { 
-            if (decimal.TryParse(Console.ReadLine(), out var validateDecimal))
-            {
-                return validateDecimal;
-            }
-            else
-            {
-                Console.WriteLine("Input is not a valid number. ");
-                return ReadUserInput(); //recursive
-            } 
+            _payslipInput = payslipInput;
         }
     
         public void GetUserData()
         {
             Console.Write("Please input your annual salary: ");
-            annualIncome = ReadUserInput();
+            annualIncome = _payslipInput.ReadUserInput();
 
             Console.Write("Please input your super rate: ");
-            superRate = ReadUserInput(); 
+            superRate = _payslipInput.ReadUserInput(); 
+
+            Console.Write("Please enter your payment start date (date Month Year): ");
+            startDate = _payslipInput.ParseDateIntoString();
             
-            StartDate();
-            EndDate();
+            Console.Write("Please enter your payment end date (date Month Year): ");
+            endDate = _payslipInput.ParseDateIntoString();
         }
         public void PrintPaymentPeriod()
         {
             Console.WriteLine("Payment Period: {0} - {1}", startDate, endDate);
         }
-        private string CheckDateFormat()
-        {
-            string date = String.Empty;
-            if (DateTime.TryParse(Console.ReadLine(), out var dateValue))
-            {
-                date = String.Format("{0:dd MMMM, yyyy}", dateValue);
-            }
-            else 
-            {
-                Console.Write("Please try again. ");
-                date = CheckDateFormat();
-            }
-            return date;
-        }
-        public void StartDate()
-        {
-            Console.Write("Please enter your payment start date (date Month Year): ");
-            startDate = CheckDateFormat();
-        }
-        public void EndDate()
-        {
-            Console.Write("Please enter your payment end date (date Month Year): ");
-            endDate = CheckDateFormat();
-        }
+
         public void DoCalculations()
         {
             grossPay =  _calculations.CalculateMonthlyGrossPay(annualIncome);
