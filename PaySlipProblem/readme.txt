@@ -185,5 +185,16 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
             	   }
             	   return date;
 
-====== 17/08 ==
+====== improvements 18/8 ==
+** annual income to gross pay calculation already completed
+** added calculation for net pay (gross pay - tax) - have 3 test cases
+** added calculation for super (grossPay * (super / 100))
+** prior to attempting tax calculations, push to GitHub
+** calculate tax - how to convert Calculations object to TaxableIncomeTax object
+** added tax calculations ( tax = taxableIncomeTax.Base + ((income - (taxableIncomeTax.Threshold)) * taxableIncomeTax.Rate);
+** calculations class moved to payslip problem
+** deleted unwanted files
+
+
+
 

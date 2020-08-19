@@ -26,7 +26,7 @@ namespace test.PayslipProblem
         [InlineData(5004, 922, 4082)]
         [InlineData(1516, 0, 1516)]
         [InlineData(7250, 1652, 5598)]
-        public void GrossPayToNetPay(decimal grossPay, decimal tax, decimal expected)
+        public void Should_Calculate_NetPay_From_GrossPAY(decimal grossPay, decimal tax, decimal expected)
         {
             //arrange
             var calculateNetPay = new Calculations();
@@ -43,7 +43,7 @@ namespace test.PayslipProblem
         [InlineData(5004, 27, 1351)]
         [InlineData(5004, 15, 751)]
         [InlineData(4005, 9, 360)]
-        public void CalculateSuper(decimal grossPay, decimal superRate, decimal expected)
+        public void Should_Calculate_Super_From_GrossPay(decimal grossPay, decimal superRate, decimal expected)
         {
             // arrange 
             var calculateSuper = new Calculations();
@@ -56,7 +56,7 @@ namespace test.PayslipProblem
         [InlineData(60050, 922)]
         [InlineData(18200, 0)]
         [InlineData(87000, 1652)]
-        public void CalculateTaxableIncomeTax(decimal income, decimal expected)
+        public void Should_Calculate_TaxableIncomeTax_From_AnnualIncome(decimal income, decimal expected)
         {
             // arrange
             var incomeTaxCalculator = new Calculations(); 

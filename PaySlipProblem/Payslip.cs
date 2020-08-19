@@ -22,7 +22,6 @@ namespace PaySlipProblem
             _calculations = calculations;
         }
 
-     
         private decimal ReadUserInput() 
         { 
             if (decimal.TryParse(Console.ReadLine(), out var validateDecimal))
@@ -42,7 +41,8 @@ namespace PaySlipProblem
             annualIncome = ReadUserInput();
 
             Console.Write("Please input your super rate: ");
-            superRate = ReadUserInput(); // make it a percentage
+            superRate = ReadUserInput(); 
+            
             StartDate();
             EndDate();
         }
@@ -86,10 +86,10 @@ namespace PaySlipProblem
             DoCalculations();
             PrintPaymentPeriod();
 
-            Console.WriteLine("Gross Income: {0:F0}", grossPay);
-            Console.WriteLine("Income Tax: {0:F0}", tax);
-            Console.WriteLine("Net Income: {0:F0}", netPay);
-            Console.WriteLine("Super: {0:F0}", super);
+            Console.WriteLine("Gross Income: {0}", grossPay);
+            Console.WriteLine("Income Tax: {0}", tax);
+            Console.WriteLine("Net Income: {0}", netPay);
+            Console.WriteLine("Super: {0}", super);
         }
     }
 }
