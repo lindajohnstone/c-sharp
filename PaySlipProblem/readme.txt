@@ -195,6 +195,12 @@ https://myobconfluence.atlassian.net/wiki/spaces/PRAC/pages/1464731694/16th+July
 ** calculations class moved to payslip problem
 ** deleted unwanted files
 
+====== improvements 19/8 ==
+** tests for payslip class - receive input
+** needed to add an Interface to take responsibility for ReadLine so that it can be tested
+** created stub
+** mentor meeting for 1 3/4 hours
+** tomorrow's meeting planning for next week and ask questions. Meeting to be short - questions determined prior to meeting
 
 
 
