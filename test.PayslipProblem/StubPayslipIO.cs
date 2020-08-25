@@ -15,6 +15,11 @@ namespace test.PayslipProblem
             
         }
 
+        public void Write(string v)
+        {
+            
+        }
+
         public StubPayslipIO WithReadLine(string value) 
         {
             _readLine = value;

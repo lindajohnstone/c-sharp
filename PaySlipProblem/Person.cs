@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace PaySlipProblem
 {
@@ -7,6 +8,7 @@ namespace PaySlipProblem
     {
         public string Name { get; set; }
         public string Surname { get; set; }
+        
         //public Payslip EmployeeData { get; set; } // link person class to payslip class
         public void GetPersonNameSurname()
         {
@@ -19,6 +21,7 @@ namespace PaySlipProblem
         {
             Console.WriteLine("{0} {1}", Name, Surname);
         }
+    
         //public void GetPersonPayslip
     }
 }

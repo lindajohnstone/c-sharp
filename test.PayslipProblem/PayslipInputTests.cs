@@ -1,6 +1,5 @@
 using System;
 using PaySlipProblem;
-//using PaySlipProblem;
 using Xunit;
 
 namespace test.PayslipProblem

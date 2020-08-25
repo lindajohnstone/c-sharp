@@ -11,6 +11,9 @@ Check which branch (local) == git branch
 Rename the local branch to the new name == git branch -m <old_name> <new_name>
 Delete the old branch on remote - where <remote> is, for example, origin == git push <remote> --delete <old_name>
 Or shorter way to delete remote branch [:] == git push <remote> :<old_name>
+Delete local branch == git branch -d <branchname>
 Push the new branch to remote == git push <remote> <new_name>
 Reset the upstream branch for the new_name local branch == git push <remote> -u <new_name>
-Pull branch (on GitHub)
+Pull branch (on GitHub) == follow instructions
+Create new branch == git checkout -b <branchname>
+

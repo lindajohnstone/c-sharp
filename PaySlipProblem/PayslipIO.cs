@@ -13,5 +13,9 @@ namespace PaySlipProblem
         {
             Console.WriteLine(v);
         }
+        public void Write(string v)
+        {
+            Console.Write(v);
+        }
     }
 }
