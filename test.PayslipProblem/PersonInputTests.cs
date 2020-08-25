@@ -7,13 +7,18 @@ namespace test.PayslipProblem
     public class PersonInputTests
     {
         [Theory]
-        [InlineData("john", "john")]
-        public void Should_Check_Name_IsNotNumeric(string input, string expected)
+        [InlineData("john", true)]
+        [InlineData("Jones 12", false)]
+        [InlineData("*James", false)]
+        [InlineData("amy lee", true)]
+        [InlineData("amy-lee", true)]
+        [InlineData("o'brien", true)]
+        public void Should_Check_Name_IsNotNumeric(string input, bool expected)
         {
             //arrange
             var checkUserInput = new PersonInput();
             //act
-            string personName = checkUserInput.UseRegexNameValidCharacters(input);
+            bool personName = checkUserInput.ValidateName(input);
             
             //assert
             Assert.Equal(expected, personName); 
