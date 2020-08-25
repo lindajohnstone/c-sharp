@@ -4,7 +4,7 @@ using Xunit;
 
 namespace test.PayslipProblem
 {
-    public class PersonInputTests
+    public class NameValidationTests
     {
         [Theory]
         [InlineData("john", true)]
@@ -13,7 +13,7 @@ namespace test.PayslipProblem
         [InlineData("amy lee", true)]
         [InlineData("amy-lee", true)]
         [InlineData("o'brien", true)]
-        public void Should_Check_Name_IsNotNumeric(string input, bool expected)
+        public void Should_Check_ValidateName_Accepts_Correct_Input(string input, bool expected)
         {
             //arrange
             var checkUserInput = new PersonInput();
